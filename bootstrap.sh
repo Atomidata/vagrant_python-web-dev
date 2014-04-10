@@ -15,7 +15,7 @@ if ! command -v pip; then
 	easy_install -U pip
 fi
 if [[ ! -f /usr/local/bin/virtualenv ]]; then
-	pip install -u virtualenv virtualenvwrapper stevedore
+	pip install virtualenv virtualenvwrapper stevedore
 fi
 
 if [[ ! -d  /home/vagrant/.virtualenvs ]]; then
