@@ -15,7 +15,7 @@ if ! command -v pip; then
 	easy_install -U pip
 fi
 if [[ ! -f /usr/local/bin/virtualenv ]]; then
-	easy_install virtualenv virtualenvwrapper
+	pip install -u virtualenv virtualenvwrapper stevedore
 fi
 
 if [[ ! -d  /home/vagrant/.virtualenvs ]]; then
@@ -25,8 +25,8 @@ fi
 cp /home/vagrant/.bashrc /home/vagrant/.bashrc.bak
 
 
-if ! grep -q "WORKON_HOME=$HOME/.virtualenvs" /home/vagrant/.bashrc; then
-	echo "export WORKON_HOME=$HOME/.virtualenvs" >> /home/vagrant/.bashrc
+if ! grep -q "WORKON_HOME=~/.virtualenvs" /home/vagrant/.bashrc; then
+	echo "export WORKON_HOME=~/.virtualenvs" >> /home/vagrant/.bashrc
 fi
 
 if ! grep -q "source /usr/local/bin/virtualenvwrapper.sh" /home/vagrant/.bashrc; then
