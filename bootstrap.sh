@@ -34,6 +34,11 @@ if ! grep -q "source /usr/local/bin/virtualenvwrapper.sh" /home/vagrant/.bashrc;
 	echo "source /usr/local/bin/virtualenvwrapper.sh" >> /home/vagrant/.bashrc
 fi
 
+if ! grep -q "export PIP_DOWNLOAD_CACHE=~/.pip_download_cache" /home/vagrant/.bashrc; then
+	echo "export PIP_DOWNLOAD_CACHE=~/.pip_download_cache">> /home/vagrant/.bashrc
+fi
+
+
 #create an alias for runserver so we don't have to type python manage.py runserver ip:port
 #get the ip address
 IP_ADDR=$(ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}')
