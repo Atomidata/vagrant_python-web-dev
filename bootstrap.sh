@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 apt-get update -y
-apt-get upgrade -y
+#apt-get upgrade -y
 
 apt-get install -y software-properties-common python-software-properties
-apt-get install -y git vim wget screen curl gnupg flex bison gperf build-essential
+apt-get install -y git vim wget screen curl gnupg build-essential
 
 apt-get install -y build-essential python python-dev python-setuptools python-pip
 
