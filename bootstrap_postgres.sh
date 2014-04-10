@@ -31,7 +31,7 @@ fi
 su - postgres -c "psql -tAc \"alter user postgres with password 'postgres';\""
 
 #create the vagrant user and set the password
-$VAGRANT_EXISTS=$(su - postgres -c "psql postgres -tAc \"SELECT 1 FROM pg_roles WHERE rolname='vagrant'\"")
+VAGRANT_EXISTS=$(su - postgres -c "psql postgres -tAc \"SELECT 1 FROM pg_roles WHERE rolname='vagrant'\"")
 if [ ! "$VAGRANT_EXISTS" == "1" ]; then
     su - postgres -c "psql -tAc \"CREATE USER vagrant WITH PASSWORD 'vagrant';\""
 fi
